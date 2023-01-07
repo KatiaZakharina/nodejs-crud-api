@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "allowJs": true,
+    "target": "ES6",
+    "module": "Node16",
+    "moduleResolution": "Node"
+  },
+  "include": ["src/**/*", "server.ts"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}
