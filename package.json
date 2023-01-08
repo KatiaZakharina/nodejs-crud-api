@@ -18,18 +18,18 @@
   },
   "homepage": "https://github.com/KatiaZakharina/nodejs-crud-api#readme",
   "dependencies": {
-    "@types/uuid": "^9.0.0",
     "dotenv": "^16.0.3",
     "nodemon": "^2.0.20",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "@types/uuid": "^9.0.0",
     "prettier": "^2.8.2",
     "ts-loader": "^9.4.2",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.4",
-    "uuid": "^9.0.0",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1"
-  },
-  "devDependencies": {
-    "@types/node": "^18.11.18"
   }
 }
