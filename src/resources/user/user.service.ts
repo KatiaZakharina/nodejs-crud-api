@@ -1,5 +1,5 @@
-import db from '../../localDB';
+import {createService, COLLECTION_CONSTANTS} from '../../localDB';
 
-const userService = db.createService(db.COLLECTION_CONSTANTS.USERS);
+const userService = createService(COLLECTION_CONSTANTS.USERS);
 
 export default userService;

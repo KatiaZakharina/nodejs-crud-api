@@ -2,23 +2,16 @@ import { v4 as uuid } from 'uuid';
 
 import { User } from 'resources/user/user.types';
 
-export const COLLECTION_CONSTANTS = {
+const COLLECTION_CONSTANTS = {
   USERS: 'users'
-};
+} as const;
 
 type DataBaseSchema = {
   users: User[];
 };
 
 const localDB: DataBaseSchema = {
-  users: [
-    {
-      id: '1',
-      username: 'John',
-      age: 25,
-      hobbies: ['football', 'basketball']
-    }
-  ]
+  users: []
 };
 
 class CollectionService {
@@ -71,7 +64,4 @@ class CollectionService {
 
 const createService = (currentCollection: string) => new CollectionService(currentCollection as keyof DataBaseSchema);
 
-export default {
-  createService,
-  COLLECTION_CONSTANTS
-};
+export { localDB, createService, COLLECTION_CONSTANTS };

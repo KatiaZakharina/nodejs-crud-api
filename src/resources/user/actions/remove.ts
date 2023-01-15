@@ -3,7 +3,7 @@ import { ServerResponse } from 'http';
 import { validateUserId } from './../user.helpers';
 import userService from '../user.service';
 
-const remove = async (id: string, res: ServerResponse) => {
+const remove = (id: string, res: ServerResponse) => {
   const isValid = validateUserId(id, res);
 
   if (!isValid) {
@@ -19,7 +19,7 @@ const remove = async (id: string, res: ServerResponse) => {
   }
 
   res.writeHead(204);
-  res.end({ success: true });
+  res.end();
 };
 
 export default remove;

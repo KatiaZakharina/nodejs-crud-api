@@ -5,7 +5,7 @@ import { User } from './user.types';
 
 export const validateUser = (user: User, res: ServerResponse) => {
   const throwValidationError = (): User | null => {
-    res.writeHead(404);
+    res.writeHead(400);
     res.end(JSON.stringify({ message: 'User is invalid' }));
 
     return null;

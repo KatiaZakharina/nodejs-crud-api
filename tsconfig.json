@@ -8,8 +8,8 @@
     "allowJs": true,
     "target": "ES6",
     "module": "Node16",
-    "moduleResolution": "node",
+    "moduleResolution": "node"
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "**/*.spec.ts"],
+  "exclude": ["node_modules", "**/*.spec.ts", "coverage", "dist", "__tests__", "jest.config.js"]
 }

@@ -25,12 +25,6 @@ const update = async (id: string, req: IncomingMessage, res: ServerResponse) => 
   
   const updatedUser = userService.update(id, transformedUser);
 
-  if (!updatedUser) {
-    res.statusCode = 404;
-    res.end(JSON.stringify({ message: 'User not found'}));
-    return;
-  }
-
   res.writeHead(200);
   res.end(JSON.stringify(transformedUser));
 };
