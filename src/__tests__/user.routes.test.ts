@@ -15,7 +15,7 @@ const MOCK_INVALID_USER = {
   username: 1234,
   hobbies: [1, null],
   age: '20'
-}
+};
 
 const app = startServer();
 
@@ -178,10 +178,32 @@ describe('With invalid user', () => {
   });
 });
 
-describe('With invalid user id', () => {  
+describe('With invalid user id', () => {
   describe('GET /api/users/:userId', () => {
     it('should return an error', async () => {
       const res = await request(app).get(`/api/users/1234`);
+
+      assert.equal(res.status, 400);
+      assert.deepEqual(res.body, {
+        message: 'User id is invalid'
+      });
+    });
+  });
+
+  describe('PUT /api/users/:userId', () => {
+    it('should return an error', async () => {
+      const res = await request(app).put(`/api/users/1234`).send(MOCK_USER);
+
+      assert.equal(res.status, 400);
+      assert.deepEqual(res.body, {
+        message: 'User id is invalid'
+      });
+    });
+  });
+
+  describe('DELETE /api/users/:userId', () => {
+    it('should return an error', async () => {
+      const res = await request(app).delete(`/api/users/1234`);
 
       assert.equal(res.status, 400);
       assert.deepEqual(res.body, {

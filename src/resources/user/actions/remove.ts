@@ -13,7 +13,7 @@ const remove = (id: string, res: ServerResponse) => {
   const isRemoved = userService.remove(id);
 
   if (!isRemoved) {
-    res.statusCode = 404;
+    res.writeHead(404);
     res.end(JSON.stringify({ message: 'User not found' }));
     return;
   }

@@ -7,10 +7,14 @@ import userService from '../user.service';
 const update = async (id: string, req: IncomingMessage, res: ServerResponse) => {
   const isIdValid = validateUserId(id, res);
 
+  if (!isIdValid) {
+    return;
+  }
+
   const storedUser = userService.getById(id);
 
   if (!storedUser) {
-    res.statusCode = 404;
+    res.writeHead(404);
     res.end(JSON.stringify({ message: 'User not found'}));
     return;
   }
@@ -19,7 +23,7 @@ const update = async (id: string, req: IncomingMessage, res: ServerResponse) => 
   const transformedUser = { ...storedUser, ...user };
   const isUserValid = validateUser(transformedUser, res);
 
-  if (!isIdValid || !isUserValid) {
+  if (!isUserValid) {
     return;
   }
   
