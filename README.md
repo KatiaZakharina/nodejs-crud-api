@@ -5,6 +5,7 @@
 1. Clone repository
 2. Go to the `development` branch
 3. Run `npm i`
+4. Run `npx ts-jest config:init` to create `jest.config.js` file
 
 ## Commands
 
